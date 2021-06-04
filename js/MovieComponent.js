@@ -29,31 +29,65 @@ class MovieComponent{
         );
         const clasifForm = component.querySelector('.clasification');
 
+        //para votar
         clasifForm.addEventListener('change', ()=>{
             if(clasifForm.puntaje.value){
-            switch(clasifForm.puntaje.value){
-                case '1':
-                    console.log(this.movie.name + 'puntaje de 1');
-                    break;
+                console.log("has votado");
+                switch(clasifForm.puntaje.value){
+                    case '1':
+                        let referencia1 = db.ref(`movies/${this.movie.name}/votos`).push();
+                        let newVoto1 = {
+                            id: referencia1.key,
+                            point:1,
+                        }
+                        referencia1.set(newVoto1);
+                        break;
 
-                case '2':
-                    console.log(this.movie.name + 'puntaje de 2');
-                    break;
+                    case '2':
+                        let referencia2 = db.ref(`movies/${this.movie.name}/votos`).push();
+                        let newVoto2 = {
+                            id: referencia2.key,
+                            point:2,
+                        }
+                        referencia2.set(newVoto2);
+                        break;
 
-                case '3':
-                    console.log(this.movie.name + 'puntaje de 3');
-                    break;
+                    case '3':
+                        let referencia3 = db.ref(`movies/${this.movie.name}/votos`).push();
+                        let newVoto3 = {
+                            id: referencia3.key,
+                            point:3,
+                        }
+                        referencia3.set(newVoto3);
+                        break;
 
-                case '4':
-                    console.log(this.movie.name + 'puntaje de 4');
-                    break;
+                    case '4':
+                        let referencia4 = db.ref(`movies/${this.movie.name}/votos`).push();
+                        let newVoto4 = {
+                            id: referencia4.key,
+                            point:4,
+                        }
+                        referencia4.set(newVoto4);
+                        break;
 
-                case '5':
-                    console.log(this.movie.name + 'puntaje de 5');
-                    break;
+                    case '5':
+                        let referencia5 = db.ref(`movies/${this.movie.name}/votos`).push();
+                        let newVoto5 = {
+                            id: referencia5.key,
+                            point:5,
+                        }
+                        referencia5.set(newVoto5);
+                        break;
 
-            }
-        };
+                }
+
+                //para calcular el actual puntaje
+
+                let currentScore = this.movie.votos
+            };
+
+
+
 
         });
         
@@ -62,9 +96,5 @@ class MovieComponent{
     }
 
 
-    votar = () => {
-        
-
-    }
 
 }
