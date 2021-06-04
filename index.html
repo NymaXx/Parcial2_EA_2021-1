@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CineColombia</title>
+    <link rel="stylesheet" href="./styles/main.css"> 
 </head>
 <body>
-    
+
+    <div class="title">
+        <img src="./img/cclogo.png" alt="">
+    </div>
+
+    <div class="subtitle">Escoge tu pelicula favorita</div>
+
+    <section class="movieList">
+
+        <div class="movie">
+            <div class="movie__cont1">
+                <div class="movie__name">Minari</div>
+                <form class="clasification">
+                    <label class="clasification__check"> <input type="radio"  name="puntaje" value="1"> 1</label>
+                    <label class="clasification__check"> <input type="radio"  name="puntaje" value="2"> 2</label>
+                    <label class="clasification__check"> <input type="radio"  name="puntaje" value="3"> 3</label>
+                    <label class="clasification__check"> <input type="radio"  name="puntaje" value="4"> 4</label>
+                    <label class="clasification__check"> <input type="radio"  name="puntaje" value="5"> 5</label>
+                </form>
+                
+            </div>
+
+            <div class="movie__score"> 0.5 </div>
+        </div>
+
+
+    </section>
+
+
+    <script src="./js/index.js"></script>
+    <script src="./js/component.js"></script>
 </body>
 </html>
