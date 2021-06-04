@@ -17,6 +17,7 @@
 
     <section class="movieList">
 
+    <!-- 
         <div class="movie">
             <div class="movie__cont1">
                 <div class="movie__name">Minari</div>
@@ -32,12 +33,31 @@
 
             <div class="movie__score"> 0.5 </div>
         </div>
+    -->
 
 
     </section>
 
 
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyAPzG9BYvWXZaTVDlNSB7-Izwu_41jzgvk",
+        authDomain: "parcial2-ea.firebaseapp.com",
+        projectId: "parcial2-ea",
+        storageBucket: "parcial2-ea.appspot.com",
+        messagingSenderId: "334363440152",
+        appId: "1:334363440152:web:030ef260fc7f0105537f6d"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="./js/MovieComponent.js"></script>
     <script src="./js/index.js"></script>
-    <script src="./js/component.js"></script>
+
 </body>
 </html>
