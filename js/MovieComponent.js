@@ -6,7 +6,9 @@ class MovieComponent{
     }
 
     render = () =>{
+        let currentScore = this.movie.score;
         let component = document.createElement('div');
+        let currentClick = 0;
         component.classList.add('movie');
 
         component.innerHTML = (
@@ -82,14 +84,44 @@ class MovieComponent{
                 }
 
                 //para calcular el actual puntaje
+                let ob = '';
+                let totalVotes;
+                db.ref(`movies/${this.movie.name}/votos`).on('value', (data)=>{
+                    currentScore = 0;
+                    data.forEach(
+                        (e)=>{
+                            ob = e.val().point;
+                            currentScore = currentScore + Number.parseInt(ob);
+                        }
+                        
+                    )
+                    totalVotes = data.numChildren();
+                    //console.log(totalVotes);
+                    let prom = currentScore/totalVotes;
+                    console.log(typeof prom);
 
-                let currentScore = this.movie.votos
+                    /*if(db.ref(`movies/${this.movie.name}/votos`) == null){
+                        db.ref(`movies/${this.movie.name}/score`).set(0);   
+                       }*/
+
+                    db.ref(`movies/${this.movie.name}/score`).set(prom.toFixed(1));
+                    
+                    
+                });
+                
             };
 
 
+            
+            currentClick = 1;
+            if(currentClick==1){
+                location.href = "./Thanks.html"
+            }
 
-
+          
         });
+
+      
         
 
         return component;

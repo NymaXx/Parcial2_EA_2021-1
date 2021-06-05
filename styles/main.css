@@ -1,11 +1,36 @@
 .title{
     text-align: center;
+ 
 }
+
+.title2{
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial;
+    color: darkblue;
+    font-weight: 800;
+    margin-top: 80px;
+    margin-bottom: 2%;
+}
+
 .subtitle{
     font-size: 15px;
     font-family: Arial;
     text-align: center;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
+}
+
+.toAgain{
+    font-family: Arial;
+    color: rgb(1, 33, 94);;
+    font-weight: 600;
+    font-size: 15px;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-left: 45%;
+    background-color: rgba(0, 139, 139, 0.055);
+    height: 30px;
+    border-radius: 15px;
 }
 
 .movieList{
