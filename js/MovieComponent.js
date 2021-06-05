@@ -5,6 +5,7 @@ class MovieComponent{
 
     }
 
+    //para crear cada componente con datos de firebase
     render = () =>{
         let currentScore = this.movie.score;
         let component = document.createElement('div');
@@ -112,10 +113,11 @@ class MovieComponent{
             };
 
 
-            
+            //para que solo sea posible votar una vez y ser redirigido
             currentClick = 1;
             if(currentClick==1){
-                location.href = "./Thanks.html"
+                setInterval(()=>{location.href = "./Thanks.html"}, 500);
+                
             }
 
           

@@ -1,7 +1,7 @@
 const movieList = document.querySelector(".movieList");
 const db = firebase.database();
 
-
+//visualizacion de los componentes
 db.ref('movies').on('value', (data)=>{
     movieList.innerHTML = '';
     data.forEach(
@@ -9,7 +9,6 @@ db.ref('movies').on('value', (data)=>{
             let e = obj.val();
             let movie = new MovieComponent(e);
             movieList.appendChild(movie.render());
-
 
         }
     );
